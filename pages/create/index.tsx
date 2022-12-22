@@ -1,5 +1,6 @@
-import { InputContainer } from "../components/FormComponents/InputContainer";
-import DefaultInput from "../components/FormComponents/DefaultInput";
+import Link from "next/link";
+import { InputContainer } from "../../components/FormComponents/InputContainer";
+import DefaultInput from "../../components/FormComponents/DefaultInput";
 // import BirthdayInput from "../components/FormComponents/BirthdayInput";
 
 const Create = () => {
@@ -37,6 +38,13 @@ const Create = () => {
           <InputContainer>
             <DefaultInput labelName="birthday" type="date" />
           </InputContainer>
+
+          <Link
+            href={"/create/preview"}
+            className="w-48 p-2 rounded-full mx-auto bg-gray-400 flex justify-center"
+          >
+            Preview
+          </Link>
         </form>
       </div>
     </main>

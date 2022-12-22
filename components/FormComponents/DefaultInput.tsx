@@ -38,7 +38,6 @@ const DefaultInput = ({ labelName, id, type }: InputProps) => {
         <input
           className="
             focus:w-28
-            focus:bg-white
             w-28
             bg-transparent
             placeholder-black
