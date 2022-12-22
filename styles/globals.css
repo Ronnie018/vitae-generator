@@ -67,3 +67,6 @@ input:focus
 	outline:0;
 }
 
+[show-controls] .options {
+  display: initial;
+}

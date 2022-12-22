@@ -1,11 +1,17 @@
 import Link from "next/link";
 import { InputContainer } from "../../components/FormComponents/InputContainer";
-import DefaultInput from "../../components/FormComponents/DefaultInput";
-// import BirthdayInput from "../components/FormComponents/BirthdayInput";
+import { useEffect, useState } from "react";
+import formElm from "./formElements";
 
 const Create = () => {
+  const [formElements, setFormElements] = useState(formElm);
+
+  useEffect(() => {
+    // rehydration code to set the localstorage saved form data
+  }, []);
+
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-slate-600">
       {/* FORM STYLE */}
       <div
         className="
@@ -29,15 +35,19 @@ const Create = () => {
           gap-y-2
           "
         >
-          <InputContainer>
-            <DefaultInput labelName="name" />
-          </InputContainer>
-          <InputContainer>
-            <DefaultInput labelName="last name" />
-          </InputContainer>
-          <InputContainer>
-            <DefaultInput labelName="birthday" type="date" />
-          </InputContainer>
+          {formElements.map(({ Tag, type, name, key }, i) => {
+            return (
+              <InputContainer key={i}>
+                <Tag
+                  labelName={name}
+                  type={type}
+                  setFormElements={setFormElements}
+                  formElements={formElements}
+                  id={key}
+                />
+              </InputContainer>
+            );
+          })}
 
           <Link
             href={"/create/preview"}
