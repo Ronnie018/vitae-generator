@@ -1,5 +1,6 @@
 import { InputContainer } from "../components/FormComponents/InputContainer";
-import { TextInput } from "../components/FormComponents/TextInput";
+import DefaultInput from "../components/FormComponents/DefaultInput";
+// import BirthdayInput from "../components/FormComponents/BirthdayInput";
 
 const Create = () => {
   return (
@@ -8,7 +9,7 @@ const Create = () => {
       <div
         className="
         w-11/12
-        max-w-lg
+        max-w-2xl
         flex
         flex-col
         p-4
@@ -28,7 +29,13 @@ const Create = () => {
           "
         >
           <InputContainer>
-            <TextInput labelName="name" />
+            <DefaultInput labelName="name" />
+          </InputContainer>
+          <InputContainer>
+            <DefaultInput labelName="last name" />
+          </InputContainer>
+          <InputContainer>
+            <DefaultInput labelName="birthday" type="date" />
           </InputContainer>
         </form>
       </div>
